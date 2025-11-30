@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal University of Technology, Minna - Assignment of Responsibility (AOR) Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Federal University of Technology, Minna</h1>
+            <p class="subtitle">Assignment of Responsibility (AOR) — Digital Form</p>
+        </div>
+
+        <!-- Main Form -->
+        <form id="aorForm" class="form-container">
+            <!-- 1. Lecturer Information Section -->
+            <section class="form-section">
+                <h2 class="section-title">Lecturer Information</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="session">Session</label>
+                        <input type="text" id="session" name="session" placeholder="e.g. 2023/2025" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester</label>
+                        <input type="text" id="semester" name="semester" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment">Appointment</label>
+                        <input type="text" id="appointment" name="appointment" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="middleInitial">Middle Initial</label>
+                        <input type="text" id="middleInitial" name="middleInitial" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="nameOfSchool">Name of School</label>
+                        <input type="text" id="nameOfSchool" name="nameOfSchool" placeholder="">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="department">Department</label>
+                        <input type="text" id="department" name="department" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="positionRank">Position / Rank</label>
+                        <input type="text" id="positionRank" name="positionRank" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffPhoneNo">Staff Phone No</label>
+                        <input type="text" id="staffPhoneNo" name="staffPhoneNo" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="salaryGradeLevel">Salary Grade Level</label>
+                        <input type="text" id="salaryGradeLevel" name="salaryGradeLevel" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="teachingCreditUnits">Teaching Credit units</label>
+                        <input type="text" id="teachingCreditUnits" name="teachingCreditUnits" placeholder="">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="leaveOfAbsence">Leave of Absence / Study Leave</label>
+                        <input type="text" id="leaveOfAbsence" name="leaveOfAbsence" placeholder="">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Teaching Section -->
+            <section class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">1. Teaching</h2>
+                    <button type="button" class="btn btn-add-secondary" onclick="addTeachingRow()">+ Add Course</button>
+                </div>
+
+                <table class="data-table" id="teachingTable">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name / Title</th>
+                            <th>Venue</th>
+                            <th>Days</th>
+                            <th>Time</th>
+                            <th>Credit Unit</th>
+                            <th>Studio/Lab</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teachingTableBody">
+                        <!-- Rows will be added dynamically -->
+                    </tbody>
+                </table>
+
+                <div class="table-footer">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="noOfLecturers">No of Lecturers</label>
+                            <input type="text" id="noOfLecturers" name="noOfLecturers" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="totalStudentEnrol">Total Student Enrol</label>
+                            <input type="text" id="totalStudentEnrol" name="totalStudentEnrol" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-remove" onclick="removeTeachingSection()">Remove</button>
+            </section>
+
+            <!-- 3. Administrative Duties Section -->
+            <section class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">2. Administrative Duties</h2>
+                    <button type="button" class="btn btn-add-secondary" onclick="addDutyRow()">+ Add Duty</button>
+                </div>
+
+                <table class="data-table" id="dutiesTable">
+                    <thead>
+                        <tr>
+                            <th>Type of Activity</th>
+                            <th>Type of Activity</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dutiesTableBody">
+                        <!-- Rows will be added dynamically -->
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-remove" onclick="removeDutiesSection()">Remove</button>
+            </section>
+
+            <!-- 4. Funded Research & Consultancy Section -->
+            <section class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">3. Funded Research & Consultancy</h2>
+                    <button type="button" class="btn btn-add-secondary" onclick="addProjectRow()">+ Add Project</button>
+                </div>
+
+                <table class="data-table" id="researchTable">
+                    <thead>
+                        <tr>
+                            <th>Project No</th>
+                            <th>Title of Award</th>
+                            <th>In-kind required by</th>
+                            <th>Release Time</th>
+                            <th>Total Amount</th>
+                            <th>Remark</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="researchTableBody">
+                        <!-- Rows will be added dynamically -->
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-remove" onclick="removeResearchSection()">Remove</button>
+            </section>
+
+            <!-- 5. Community Service Section -->
+            <section class="form-section">
+                <div class="section-header">
+                    <h2 class="section-title">4. Community Service</h2>
+                    <button type="button" class="btn btn-add-secondary" onclick="addServiceRow()">+ Add Service</button>
+                </div>
+
+                <table class="data-table" id="serviceTable">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Beneficiary</th>
+                            <th>Effect</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="serviceTableBody">
+                        <!-- Rows will be added dynamically -->
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-remove" onclick="removeServiceSection()">Remove</button>
+            </section>
+
+            <!-- Certification Section -->
+            <section class="form-section certification-section">
+                <h2 class="section-title">Certification</h2>
+
+                <div class="certification-grid">
+                    <div class="form-group">
+                        <label for="lecturerSignature">Lecturer's Signature / Name</label>
+                        <input type="text" id="lecturerSignature" name="lecturerSignature" placeholder="Lecturer's Signature or typed name">
+                    </div>
+                    <div class="form-group">
+                        <label for="hodsignature">HOD's Signature</label>
+                        <input type="text" id="hodsignature" name="hodsignature" placeholder="HOD's Signature or typed name">
+                    </div>
+                    <div class="form-group">
+                        <label for="deansignature">Dean's Signature</label>
+                        <input type="text" id="deansignature" name="deansignature" placeholder="Dean's Signature or typed name">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-preview" onclick="previewSummary()">Preview Summary</button>
+                    <button type="submit" class="btn btn-save">Save</button>
+                    <button type="reset" class="btn btn-clear">Clear</button>
+                </div>
+            </section>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
